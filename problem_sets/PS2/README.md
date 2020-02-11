@@ -4,7 +4,7 @@ This model describes the mRNA and protein concentration as a function of time as
 Ordinary Differential Equations (ODEs). The model equations are implemented in the [Julia](https://www.julialang.org) programming language. Required packaged are described in the ``Include.jl`` file.
 
 #### Model parameters
-Infrastructure parameters (elongation rates, RNAP/Ribosome concentrations) are contained in the ``CellFree.json`` file. Kinetic parameter sets (N=20) are contained in the ``Ensemble-T4.dat`` file (more on how we got these later).
+Infrastructure parameters (elongation rates, RNAP/Ribosome concentrations, etc) are contained in the ``CellFree.json`` file. Kinetic parameter sets (N=20) are contained in the ``Ensemble-T4.dat`` file (more on how we got these later).
 
 #### Solution of model equations
 The model equations are solved using the [DifferentialEquations.jl](https://github.com/JuliaDiffEq/DifferentialEquations.jl) package, and the solutions are visualized using the

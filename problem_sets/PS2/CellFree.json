@@ -10,13 +10,13 @@
     },
 
     "mRNA_half_life_in_hr":{
-      "value":"",
+      "value":"0.298833",
       "units":"hr",
       "bionumbers_reference":""
     },
 
     "protein_half_life_in_hr":{
-      "value":"",
+      "value":"70",
       "units":"hr",
       "bionumbers_reference":"BIND:111930"
     },
@@ -28,13 +28,13 @@
     },
 
     "characteristic_initiation_time_transcription":{
-      "value":"",
+      "value":"22",
       "units":"s",
       "bionumbers_reference":""
     },
 
     "characteristic_initiation_time_translation":{
-      "value":"",
+      "value":"1.5",
       "units":"s",
       "bionumbers_reference":"BIND:109525"
     },
@@ -46,25 +46,25 @@
     },
 
     "RNAPII_concentration":{
-      "value":"",
+      "value":"0.0675",
       "units":"mu{M}",
       "bionumbers_reference":""
     },
 
     "ribosome_concentration":{
-      "value":"",
+      "value":"2.3",
       "units":"mu{M}",
       "bionumbers_reference":""
     },
 
     "translation_elongation_rate":{
-      "value":"",
+      "value":"16.5",
       "units":"aa/s",
       "bionumbers_reference":""
     },
 
     "transcription_elongation_rate":{
-      "value":"",
+      "value":"25",
       "units":"nt/s",
       "bionumbers_reference":""
     },

@@ -10,13 +10,13 @@
     },
 
     "mRNA_half_life_in_hr":{
-      "value":"0.298833",
+      "value":"0.298",
       "units":"hr",
       "bionumbers_reference":""
     },
 
     "protein_half_life_in_hr":{
-      "value":"70",
+      "value":"75",
       "units":"hr",
       "bionumbers_reference":"BIND:111930"
     },
@@ -46,7 +46,7 @@
     },
 
     "RNAPII_concentration":{
-      "value":"0.0675",
+      "value":"0.065",
       "units":"mu{M}",
       "bionumbers_reference":""
     },

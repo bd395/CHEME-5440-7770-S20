@@ -206,12 +206,10 @@ end
 function DataDictionary(time_start,time_stop,time_step)
 
 	# Load the stoichiometric network from disk -
-	stoichiometric_matrix = readdlm("Network.dat");
+	stoichiometric_matrix = readdlm("Stoich_Matrix.dat")#("Network.dat");
 
 	# What is the system dimension? -
 	(number_of_species,number_of_reactions) = size(stoichiometric_matrix)
-
-
 
 	E = 0.01E-5
 

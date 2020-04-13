@@ -1,8 +1,15 @@
-include("Include.jl")
+#include("Include.jl")
 
-stoichMatrix = readdlm("./PS3.csv","Stoich")
-atomMatrix = readdlm("./PS3.csv", "Atom")
+using DelimitedFiles
+using LinearAlgebra
+
+stoichMatrix = readdlm("./SM.csv")
+#print(stoichMatrix)
+atomMatrix = readdlm("./AM.csv")
+#print(atomMatrix)
+#atomMatrix = readdlm("./PS3.csv", ",")
 
 # Check
 
 check = transpose(atomMatrix)*stoichMatrix
+print(check)

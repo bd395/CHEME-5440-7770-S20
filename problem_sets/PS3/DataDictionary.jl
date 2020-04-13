@@ -211,6 +211,36 @@ function DataDictionary(time_start,time_stop,time_step)
 	# What is the system dimension? -
 	(number_of_species,number_of_reactions) = size(stoichiometric_matrix)
 
+
+
+	E = 0.01E-5
+
+	kcat_v1 = 203*3600
+	kcat_v2 = 34.5*3600
+	kcat_v3 = 249*3600
+	kcat_v4 = 88.1*3600
+	kcat_v5f = 13.7*3600
+	kcat_v5r = 13.7*3600
+
+	v1_max = kcat_v1*E
+	v2_max = kcat_v2*E
+	v3_max = kcat_v3*E
+	v4_max = kcat_v4*E
+	v5f_max = kcat_v5f*E
+	v5r_max = kcat_v5r*E
+
+
+	E = (0.01)*(1/1000)	# mmol/gDW
+	metabolic_vmax_array = [
+		203*(3600)*E	;	# v1 ec:6.3.4.5 mmol/gDW-hr
+		34.5*(3600)*E	;	# v2 ec:4.3.2.1 mmol/gDW-hr
+		249*(3600)*E	;	# v3 ec:3.5.3.1 mmol/gDW-hr
+		88.1*(3600)*E	;	# v4 ec:2.1.3.3 mmol/gDW-hr
+		13.7*(3600)*E	;	# v5 ec:1.14.13.39 mmol/gDW-hr
+		13.7*(3600)*E	;	# v6 ec:1.14.13.39 mmol/gDW-hr
+
+
+
 	# Setup default flux bounds array -
 	default_bounds_array = [
 		0	2.2148976	;	# Vmax [mmol/gdw-hr] 1	M_ATP_c+M_L-Citrulline_c+M_L-Aspartate_c --> M_AMP_c+M_Diphosphate_c+M_N-(L-Arginino)succinate_c
@@ -240,24 +270,24 @@ function DataDictionary(time_start,time_stop,time_step)
 
 	# Setup default species bounds array -
 	species_bounds_array = [
-		0.0	0.0	;	# 1 M_AMP_c
-		0.0	0.0	;	# 2 M_ATP_c
-		0.0	0.0	;	# 3 M_Carbamoyl_phosphate_c
-		0.0	0.0	;	# 4 M_Diphosphate_c
-		0.0	0.0	;	# 5 M_Fumarate_c
-		0.0	0.0	;	# 6 M_H2O_c
-		0.0	0.0	;	# 7 M_H_c
-		0.0	0.0	;	# 8 M_L-Arginine_c
-		0.0	0.0	;	# 9 M_L-Aspartate_c
-		0.0	0.0	;	# 10 M_L-Citrulline_c
-		0.0	0.0	;	# 11 M_L-Ornithine_c
-		0.0	0.0	;	# 12 M_N-(L-Arginino)succinate_c
-		0.0	0.0	;	# 13 M_NADPH_c
-		0.0	0.0	;	# 14 M_NADP_c
-		0.0	0.0	;	# 15 M_Nitric_oxide_c
-		0.0	0.0	;	# 16 M_Orthophosphate_c
-		0.0	0.0	;	# 17 M_Oxygen_c
-		0.0	0.0	;	# 18 M_Urea_c
+		0.0	0.0	;	# 1 ATP
+		0.0	0.0	;	# 2 L-Cirtulline
+		0.0	0.0	;	# 3 L-Aspartate
+		0.0	0.0	;	# 4 AMP
+		0.0	0.0	;	# 5 Diphosphate
+		0.0	0.0	;	# 6 N-(L-Arginino)succinate
+		0.0	0.0	;	# 7 Fumarate
+		0.0	0.0	;	# 8 L-Arginine
+		0.0	0.0	;	# 9 H20
+		0.0	0.0	;	# 10 L-Ornithine
+		0.0	0.0	;	# 11 Urea
+		0.0	0.0	;	# 12 Carbomoyl_phosphate
+		0.0	0.0	;	# 13 Orthophosphate
+		0.0	0.0	;	# 14 Oxygen
+		0.0	0.0	;	# 15 NADPH
+		0.0	0.0	;	# 16 H
+		0.0	0.0	;	# 17 Nitric Oxide
+		0.0	0.0	;	# 18 NADP
 	];
 
 	# Min/Max flag - default is minimum -
@@ -266,27 +296,27 @@ function DataDictionary(time_start,time_stop,time_step)
 	# Setup the objective coefficient array -
 	objective_coefficient_array = [
 
-		0.0	;	# 1 v1::M_ATP_c+M_L-Citrulline_c+M_L-Aspartate_c --> M_AMP_c+M_Diphosphate_c+M_N-(L-Arginino)succinate_c
-		0.0	;	# 2 v2::M_N-(L-Arginino)succinate_c --> M_Fumarate_c+M_L-Arginine_c
-		0.0	;	# 3 v3::M_L-Arginine_c+M_H2O_c --> M_L-Ornithine_c+M_Urea_c
-		0.0	;	# 4 v4::M_Carbamoyl_phosphate_c+M_L-Ornithine_c --> M_Orthophosphate_c+M_L-Citrulline_c
-		0.0	;	# 5 v5::2.0*M_L-Arginine_c+4.0*M_Oxygen_c+3.0*M_NADPH_c+3.0*M_H_c --> 2.0*M_Nitric_oxide_c+2.0*M_L-Citrulline_c+3.0*M_NADP_c+4.0*M_H2O_c
-		0.0	;	# 6 v5_reverse::2.0*M_Nitric_oxide_c+2.0*M_L-Citrulline_c+3.0*M_NADP_c+4.0*M_H2O_c --> 2.0*M_L-Arginine_c+4.0*M_Oxygen_c+3.0*M_NADPH_c+3.0*M_H_c
-		0.0	;	# 7 b1::[] --> M_Carbamoyl_phosphate_c
-		0.0	;	# 8 b2::[] --> M_L-Aspartate_c
-		0.0	;	# 9 b3::M_Fumarate_c --> []
-		0.0	;	# 10 b4::M_Urea_c --> []
-		0.0	;	# 11 b5::[] --> M_ATP_c
-		0.0	;	# 12 b6::M_AMP_c --> []
-		0.0	;	# 13 b7::M_Diphosphate_c --> []
-		0.0	;	# 14 b8::M_Orthophosphate_c --> []
-		0.0	;	# 15 b9::[] --> M_Oxygen_c
-		0.0	;	# 16 b10::[] --> M_NADPH_c
-		0.0	;	# 17 b11::[] --> M_H_c
-		0.0	;	# 18 b12::M_Nitric_oxide_c --> []
-		0.0	;	# 19 b13::M_NADP_c --> []
-		0.0	;	# 20 b14::M_H2O_c --> []
-		0.0	;	# 21 b14_reverse::[] --> M_H2O_c
+		0.0	;	# v1
+		0.0	;	# v2
+		0.0	;	# v3
+		0.0	;	# v4
+		0.0	;	# v5F
+		0.0	;	# v5R
+		0.0	;	# b1
+		0.0	;	# b2
+		0.0	;	# b3
+		1.0	;	# b4 - Urea
+		0.0	;	# b5
+		0.0	;	# b6
+		0.0	;	# b7
+		0.0	;	# b8
+		0.0	;	# b9
+		0.0	;	# b10
+		0.0	;	# b11
+		0.0	;	# b12
+		0.0	;	# b13
+		0.0	;	# b14
+		0.0	;	# b15
 
 	];
 

@@ -10,8 +10,10 @@ using DataFrames
 SM = DataFrame(CSV.File("SM.csv",header=false))
 SM = convert(Matrix,SM)
 
+
+writedlm("Stoich_Matrix.dat", SM)
+
 AM = DataFrame(CSV.File("AM.csv",header=false))
 AM = convert(Matrix,AM)
 
-
-check = transpose(atomMatrix)*stoichMatrix
+check = transpose(AM)*SM

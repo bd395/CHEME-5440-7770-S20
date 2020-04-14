@@ -30,4 +30,10 @@ The ``Solve.jl`` solution script requires the ``GLPK`` package to the FBA proble
 
 
 ### File Directory
+``Atom_Matrix.csv``: atom matrix taken from PS3.csv
+``CheckBalances.csv``: checks that elements balance
+``DataDictionary.jl``: returns correct bounds for optimization
+``Flux.jl``: uses GLPK optimization package for max urea flux calculation
+``Include.jl``: includes required packages
+``PS3.csv``: more user-friendly visual of stoichiometric and atom matrices
 

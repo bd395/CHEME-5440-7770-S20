@@ -2,7 +2,7 @@
 This solution is slightly different from your PS3 (it does not include the metabolite data from Park et al in the bounds) so your estimated fluxes may be a little different.
 
 ### How do I do the QA/QC balance check?
-To check if the chemical reactions (contained in the ``Reactions.dat`` file) are balanced, issue the command:
+To check if the chemical reactions are balanced, issue the command:
 
   ```jl
     julia > include("CheckBalances.jl")

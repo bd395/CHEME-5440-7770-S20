@@ -7,13 +7,11 @@ using DataFrames
 
 
 
-SM = DataFrame(CSV.File("SM.csv",header=false))
-SM = convert(Matrix,SM)
+Stoich_Matrix = DataFrame(CSV.File("Stoich_Matrix.csv",header=false))
+Stoich_Matrix = convert(Matrix,Stoich_Matrix)
+writedlm("Stoich_Matrix.dat", Stoich_Matrix)
 
+Atom_Matrix = DataFrame(CSV.File("Atom_Matrix.csvM.csv",header=false))
+Atom_Matrix = convert(Matrix,Atom_Matrix)
 
-writedlm("Stoich_Matrix.dat", SM)
-
-AM = DataFrame(CSV.File("AM.csv",header=false))
-AM = convert(Matrix,AM)
-
-check = transpose(AM)*SM
+check = transpose(Atom_Matrix)*Stoich_Matrix

@@ -211,7 +211,7 @@ function DataDictionary(time_start,time_stop,time_step)
 	# What is the system dimension? -
 	(number_of_species,number_of_reactions) = size(stoichiometric_matrix)
 
-	E = 1E-5
+	E = (0.01)*(1/1000)	# mmol/gDW
 
 	kcat_v1 = 203*3600
 	kcat_v2 = 34.5*3600
@@ -228,7 +228,6 @@ function DataDictionary(time_start,time_stop,time_step)
 	v5r_max = kcat_v5r*E
 
 
-	E = (0.01)*(1/1000)	# mmol/gDW
 	metabolic_vmax_array = [
 		v1_max*(4.67E-3/(4.67E-3 + 3.92E-4))*(1.49E-2/(1.49E-2 + 1.54E-4))	;	# v1 ec:6.3.4.5 mmol/gDW-hr
 		v2_max*1	;	# v2 ec:4.3.2.1 mmol/gDW-hr

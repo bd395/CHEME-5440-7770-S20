@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 # ----------------------------------------------------------------------------------- #
-
+#=
 function check_unbalanced_boundary_reactions(time_start,time_stop,time_step)
 
 	# load the original data dictionary -
@@ -141,7 +141,7 @@ function maximize_urea_production_open(time_start,time_stop,time_step)
 	# return the updated dictionary -
 	return data_dictionary
 end
-
+=#
 function maximize_urea_production(time_start,time_stop,time_step)
 
 	# load the original data dictionary -
@@ -234,7 +234,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		v3_max*2.55E-4/(1.55E-3 + 2.55E-4)	;	# v3 ec:3.5.3.1 mmol/gDW-hr
 		v4_max*1.01E-5/(1.01E-5 + 8.50E-4)	;	# v4 ec:2.1.3.3 mmol/gDW-hr
 		v5f_max*2.55E-4/(3.50E-06 + 2.55E-4)	;	# v5 ec:1.14.13.39 mmol/gDW-hr
-		v5r_max* 1;	# v6 ec:1.14.13.39 mmol/gDW-hr
+		v5r_max*1;	# v6 ec:1.14.13.39 mmol/gDW-hr
 		];
 
 
@@ -314,7 +314,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		0.0	;	# b15
 
 	 ];
-
+#=
 	# List of reation strings - used to write flux report
 	list_of_reaction_strings = [
 		"v1::M_ATP_c+M_L-Citrulline_c+M_L-Aspartate_c --> M_AMP_c+M_Diphosphate_c+M_N-(L-Arginino)succinate_c"	;	# 1
@@ -512,5 +512,6 @@ function DataDictionary(time_start,time_stop,time_step)
 	data_dictionary["mass_of_single_cell"] = mass_of_single_cell
 	data_dictionary["txtl_parameter_dictionary"] = txtl_parameter_dictionary
 	# =============================== DO NOT EDIT ABOVE THIS LINE ============================== #
+=#
 	return data_dictionary
 end

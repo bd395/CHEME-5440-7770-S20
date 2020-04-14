@@ -109,31 +109,31 @@ function maximize_urea_production_open(time_start,time_stop,time_step)
 
 	# Vmax [mmol/gdw-hr] 15	[] --> M_Oxygen_c
 	default_flux_bounds_array[15,1] = -10
-	default_flux_bounds_array[15,2] = 10
+	default_flux_bounds_array[15,2] = 0
 
 	# Vmax [mmol/gdw-hr] 16	[] --> M_NADPH_c
 	default_flux_bounds_array[16,1] = -10
-	default_flux_bounds_array[16,2] = 10
+	default_flux_bounds_array[16,2] = 0
 
 	# Vmax [mmol/gdw-hr] 17	[] --> M_H_c
 	default_flux_bounds_array[17,1] = -10
-	default_flux_bounds_array[17,2] = 10
+	default_flux_bounds_array[17,2] = 0
 
 	# Vmax [mmol/gdw-hr] 18	M_Nitric_oxide_c --> []
-	default_flux_bounds_array[18,1] = -10
+	default_flux_bounds_array[18,1] = 0
 	default_flux_bounds_array[18,2] = 10
 
 	# Vmax [mmol/gdw-hr] 19	M_NADP_c --> []
-	default_flux_bounds_array[19,1] = -10
+	default_flux_bounds_array[19,1] = 0
 	default_flux_bounds_array[19,2] = 10
 
 	# Vmax [mmol/gdw-hr] 20	M_H2O_c --> []
-	default_flux_bounds_array[20,1] = -10
+	default_flux_bounds_array[20,1] = 0
 	default_flux_bounds_array[20,2] = 10
 
 	# Vmax [mmol/gdw-hr] 21	[] --> M_H2O_c
 	default_flux_bounds_array[21,1] = -10
-	default_flux_bounds_array[21,2] = 10
+	default_flux_bounds_array[21,2] = 0
 
 	# repackage -
 	data_dictionary["default_flux_bounds_array"] = default_flux_bounds_array

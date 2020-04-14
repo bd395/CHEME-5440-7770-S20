@@ -21,7 +21,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 # ----------------------------------------------------------------------------------- #
-#=
+
 function check_unbalanced_boundary_reactions(time_start,time_stop,time_step)
 
 	# load the original data dictionary -
@@ -141,7 +141,7 @@ function maximize_urea_production_open(time_start,time_stop,time_step)
 	# return the updated dictionary -
 	return data_dictionary
 end
-=#
+
 function maximize_urea_production(time_start,time_stop,time_step)
 
 	# load the original data dictionary -
@@ -246,21 +246,21 @@ function DataDictionary(time_start,time_stop,time_step)
 		0	metabolic_vmax_array[4]	;	# Vmax [mmol/gdw-hr] 4	M_Carbamoyl_phosphate_c+M_L-Ornithine_c --> M_Orthophosphate_c+M_L-Citrulline_c
 		0	metabolic_vmax_array[5]	;	# Vmax [mmol/gdw-hr] 5	2.0*M_L-Arginine_c+4.0*M_Oxygen_c+3.0*M_NADPH_c+3.0*M_H_c --> 2.0*M_Nitric_oxide_c+2.0*M_L-Citrulline_c+3.0*M_NADP_c+4.0*M_H2O_c
 		0	metabolic_vmax_array[6]	;	# Vmax [mmol/gdw-hr] 6	2.0*M_Nitric_oxide_c+2.0*M_L-Citrulline_c+3.0*M_NADP_c+4.0*M_H2O_c --> 2.0*M_L-Arginine_c+4.0*M_Oxygen_c+3.0*M_NADPH_c+3.0*M_H_c
-		0	10	;	# Vmax [mmol/gdw-hr] 7	[] --> M_Carbamoyl_phosphate_c
-		0	10	;	# Vmax [mmol/gdw-hr] 8	[] --> M_L-Aspartate_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 7	[] --> M_Carbamoyl_phosphate_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 8	[] --> M_L-Aspartate_c
 		0	10	;	# Vmax [mmol/gdw-hr] 9	M_Fumarate_c --> []
 		0	10	;	# Vmax [mmol/gdw-hr] 10	M_Urea_c --> []
-		0	10	;	# Vmax [mmol/gdw-hr] 11	[] --> M_ATP_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 11	[] --> M_ATP_c
 		0	10	;	# Vmax [mmol/gdw-hr] 12	M_AMP_c --> []
 		0	10	;	# Vmax [mmol/gdw-hr] 13	M_Diphosphate_c --> []
 		0	10	;	# Vmax [mmol/gdw-hr] 14	M_Orthophosphate_c --> []
-		0	10	;	# Vmax [mmol/gdw-hr] 15	[] --> M_Oxygen_c
-		0	10	;	# Vmax [mmol/gdw-hr] 16	[] --> M_NADPH_c
-		0	10	;	# Vmax [mmol/gdw-hr] 17	[] --> M_H_c
-		0	10	;	# Vmax [mmol/gdw-hr] 18	M_Nitric_oxide_c --> []
-		0	10	;	# Vmax [mmol/gdw-hr] 19	M_NADP_c --> []
-		0	10	;	# Vmax [mmol/gdw-hr] 20	M_H2O_c --> []
-		0	10	;	# Vmax [mmol/gdw-hr] 21	[] --> M_H2O_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 15	[] --> M_Oxygen_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 16	[] --> M_NADPH_c
+		-10	0	;	# Vmax [mmol/gdw-hr] 17	[] --> M_H_c
+		 0	10	;	# Vmax [mmol/gdw-hr] 18	M_Nitric_oxide_c --> []
+		 0	10	;	# Vmax [mmol/gdw-hr] 19	M_NADP_c --> []
+		 0	10	;	# Vmax [mmol/gdw-hr] 20	M_H2O_c --> []
+		-10	0	;	# Vmax [mmol/gdw-hr] 21	[] --> M_H2O_c
 	 ];
 
 	# Setup default species bounds array -
@@ -314,7 +314,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		0.0	;	# b15
 
 	 ];
-#=
+
 	# List of reation strings - used to write flux report
 	list_of_reaction_strings = [
 		"v1::M_ATP_c+M_L-Citrulline_c+M_L-Aspartate_c --> M_AMP_c+M_Diphosphate_c+M_N-(L-Arginino)succinate_c"	;	# 1
@@ -362,7 +362,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		"M_Urea_c"	;	# 18
 	 ];
 
-#=
+
 	# Metabolic Vmax array (units: mmol/B-hr) -
 	metabolic_vmax_array = [
 		2.2148976	;	# Vmax [mmol/gdw-hr] 1	M_ATP_c+M_L-Citrulline_c+M_L-Aspartate_c --> M_AMP_c+M_Diphosphate_c+M_N-(L-Arginino)succinate_c
@@ -387,7 +387,7 @@ function DataDictionary(time_start,time_stop,time_step)
 		2.2148976	;	# Vmax [mmol/gdw-hr] 20	M_H2O_c --> []
 		2.2148976	;	# Vmax [mmol/gdw-hr] 21	[] --> M_H2O_c
 	 ];
-=#
+
 	# Metabolic saturation constant array (units mM) -
 	number_of_metabolic_rates = length(metabolic_vmax_array)
 	metabolic_saturation_constant_array = 0.130*ones(number_of_metabolic_rates*number_of_species)
@@ -512,6 +512,6 @@ function DataDictionary(time_start,time_stop,time_step)
 	data_dictionary["mass_of_single_cell"] = mass_of_single_cell
 	data_dictionary["txtl_parameter_dictionary"] = txtl_parameter_dictionary
 	# =============================== DO NOT EDIT ABOVE THIS LINE ============================== #
-=#
+
 	return data_dictionary
 end

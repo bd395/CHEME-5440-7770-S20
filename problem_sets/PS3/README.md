@@ -4,7 +4,9 @@ To check if the chemical reactions are balanced, issue the command:
   ```jl
     julia > include("CheckBalances.jl")
   ```
-This will formulate the Atom matrix ``A``, and then compute the product of ``transpose(A)*S`` where ``S`` denotes the stoichiometric matrix (contained in the file ``Network.net``). Two arrays are produced: 1) we do not consider the boundary species (we have to nothing/from nothing reactions). These reactions will appear unbalanced with all internal reactions balanced; ii) however, when you include the boundary species, all reactions are balanced.
+This will use the stoichiometric matrix stored in ''Stoich_Matrix.csv''
+
+formulate the Atom matrix ``A``, and then compute the product of ``transpose(A)*S`` where ``S`` denotes the stoichiometric matrix (contained in the file ``Network.net``). Two arrays are produced: 1) we do not consider the boundary species (we have to nothing/from nothing reactions). These reactions will appear unbalanced with all internal reactions balanced; ii) however, when you include the boundary species, all reactions are balanced.
 
 ### How do I estimate the fluxes?
 To estimate the Urea flux, issue the command:

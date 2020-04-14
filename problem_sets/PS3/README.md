@@ -1,24 +1,33 @@
-## PS3 Solution
-This solution is slightly different from your PS3 (it does not include the metabolite data from Park et al in the bounds) so your estimated fluxes may be a little different.
-
-### How do I do the QA/QC balance check?
+### ELement balance check
 To check if the chemical reactions are balanced, issue the command:
 
   ```jl
     julia > include("CheckBalances.jl")
   ```
-This will formulate the Atom matrix ``A``, and then compute the product of ``transpose(A)*S`` where ``S`` denotes the stoichiometric matrix (contained in the file ``Network.net``). Two arrays are produced: 1) we do not consider the boundary species (we have to nothing/from nothing reactions). These reactions will appear unbalanced with all internal reactions balanced; ii) however, when you include the boundary species, all reactions are balanced.
+This will use the stoichiometric matrix (18x21) stored in ``Stoich_Matrix.csv`` and atom matrix (18x5) stored in ``Atom_Matrix`` and then compute the product of ``transpose(Atom_Matrix)*Stoich_Matrix``. 
 
-### How do I estimate the fluxes?
+This product gives a 5x21 matrix of which the first six columns are all zeros. This indicates that the elements (C, H, O, N, P, S) balance. 
+
+### Estimate urea flux
 To estimate the Urea flux, issue the command:
 
   ```jl
     julia > include("Solve.jl")
   ```
-The ``Solve`` script formulates the constraints into a [Julia Dictionary](https://docs.julialang.org/en/v1/base/collections/#Dictionaries-1) which is passed to the solver code contained in the ``Flux.jl`` file.
-The solver returns a bunch of stuff; the ``objective_value`` and ``flux_array`` arguments contain the Urea flux and
-the optimal flux distribution, respectively. The optimal flux that I calculated was approximately: 2.2 mmol/gDW-hr.
-Note: this solution does not consider the metabolite levels in the bounds, so your solution could be different.   
+The ``Solve.jl`` script formulates the constraints into a [Julia Dictionary](https://docs.julialang.org/en/v1/base/collections/#Dictionaries-1) which is passed to the solver code contained in the ``Flux.jl`` file.
+
+The solver returns the ``objective_value`` and ``flux_array`` arguments which are the the Urea flux and
+the optimal flux distribution, respectively. 
+
+The optimal flux that calculated is approximately: 1.24 mmol/gDW-hr.
+This solution is printed when the ``Solve.jl`` script is executed.
 
 ### Requirements
-The ``Solve.jl`` solution script requires the ``GLPK`` package to the FBA problem. See [GLPK](https://github.com/JuliaOpt/GLPK.jl) for details.
+The ``CheckBalances.jl`` script requires the ``CSV``, ``LinearAlgebra``, and ``DataFrames`` Julia packages.
+
+The ``Solve.jl`` solution script requires the ``GLPK`` package to the FBA problem. See [GLPK]
+(https://github.com/JuliaOpt/GLPK.jl) for details.
+
+
+### File Directory
+

@@ -1,4 +1,4 @@
-### ELement balance check
+### Element balance check
 To check if the chemical reactions are balanced, issue the command:
 
   ```jl
@@ -19,7 +19,7 @@ The ``Solve.jl`` script formulates the constraints into a [Julia Dictionary](htt
 The solver returns the ``objective_value`` and ``flux_array`` arguments which are the the Urea flux and
 the optimal flux distribution, respectively. 
 
-The optimal flux that calculated is approximately: 1.24 mmol/gDW-hr.
+The optimal flux calculated is approximately: 1.24 mmol/gDW-hr.
 This solution is printed when the ``Solve.jl`` script is executed.
 
 ### Requirements

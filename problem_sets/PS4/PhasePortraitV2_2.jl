@@ -69,7 +69,7 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
     #Solve the model and plot the trajectories for any specified initial
     #conditions
     plt1 = plot()
-    plt2 = plot()
+    #plt2 = plot()
 
     for i in xinit
         prob = ODEProblem(ODE_model!,i,t,model)
@@ -80,17 +80,17 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
         #df = DataFrame(sol)
         #print(sol)
 
-        plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c_a"), title="c_a vs t", legend=false)
-        plt2 = plot(sol.t, sol[2,:], xaxis=("t"), yaxis=("c_r"), title="c_r vs t", legend=false)
+        plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="c_a")
+        plot!(sol.t, sol[2,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="c_r")
         #return sol
 
     end
 
     #Display and save the phase portrait
-    savefig(plt1, "./2e1.png")
-    savefig(plt2, "./2e2.png")
+    savefig(plt1, "./overall.png")
+    #savefig(plt2, "./2e2.png")
     display(plt1)
-    display(plt2)
+    #display(plt2)
 
     #Our work is done
     println("Construction of phase portrait completed!")

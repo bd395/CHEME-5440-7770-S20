@@ -22,12 +22,23 @@ end
 #Range of x1, x2 values
 ca_range = (0,200,15)          #Has the form (min, max, num points)
 cr_range = (0,100,15)          #Has the form (min, max, num points)
-c0 = ([1.0,0.0],[0.0,10.0])
+c0 = ([1.0,10.0],)
 #x₀ = ([1.0, 10.0],)  #initial state vectors; a common must be included after the first array
 tspan=(0.0,30.0)             #time span
-
+#print(length(tspan))
 #Call the phaseplot functon to construct the phase portrait
-phaseplot(bioOsc, ca_range, cr_range, xinit=c0 , t=tspan, clines=true,
+phaseplot(bioOsc, ca_range, cr_range, xinit=c0 , t=tspan, clines=false,
         norm=true, scale=0.5)
+
+#plot(t, sol, vars=(1))
+#print(t)
+#print(sol)
+#ca_ode = sol[1,:];
+#cr_ode = sol[2,:];
+
+#plot(tspan,ca_ode)
+
+
+#plot(tspan,)
 
 # xinit=()

@@ -80,8 +80,8 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
         #df = DataFrame(sol)
         #print(sol)
 
-        plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="c_a")
-        plot!(sol.t, sol[2,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="c_r")
+        plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="a")
+        plot!(sol.t, sol[2,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="r")
         #return sol
 
     end

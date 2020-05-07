@@ -74,7 +74,7 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
     end
 
     #Display and save the phase portrait
-    savefig(plt1, "./phase_portrait_n2.png")
+    savefig(plt1, "./new.png")
     display(plt1)
 
     #Our work is done

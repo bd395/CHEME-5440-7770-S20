@@ -41,13 +41,14 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
         factor = min(x1_spacing, x2_spacing)*scale
         u_norm,v_norm = normalize(u,v).*factor
         #Plot
-        #plt1 = quiver(x, y, quiver=(u_norm, v_norm), c=:grey, xaxis=("x1",
-        #    (x1lim[1], x1lim[2])), yaxis=("x2",(x2lim[1], x2lim[2])))
+        plt1 = quiver(x, y, quiver=(u_norm, v_norm), c=:grey, xaxis=("x1",
+          (x1lim[1], x1lim[2])), yaxis=("x2",(x2lim[1], x2lim[2])))
     else
-        #plt1 = quiver(x, y, quiver=(u.*scale, v.*scale), c=:grey, xaxis=("x1",
-        #    (x1lim[1], x1lim[2])), yaxis=("x2",(x2lim[1], x2lim[2])))
+        plt1 = quiver(x, y, quiver=(u.*scale, v.*scale), c=:grey, xaxis=("x1",
+          (x1lim[1], x1lim[2])), yaxis=("x2",(x2lim[1], x2lim[2])))
     end
 
+    #plt1 = plot()
     #Plot the x1- and x2- nullclines unless the nullclines argument is
     #set to false.  Rather than solving for the set of (x1, x2)
     #values for which dx1/dt = 0 or dx2/dt = 0, we create a contour plot of
@@ -56,38 +57,38 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
     #with inclusion of the exclamation point symbol after the countour fxn,
     #the plots will be constructed on the quiver plot rather than on new plots
     if clines
-            #contour!(x1_range, x2_range, u, lw=2, c=:red, levels=[0],
-            #        colorbar = :none)
+            contour!(x1_range, x2_range, u, lw=2, c=:red, levels=[0],
+                   colorbar = :none)
             # remove plt1 and replace with contour!
-            #contour!(x1_range, x2_range, v, lw=3, linestyle=:dot, c=:red,
-            #        levels=[0], colorbar = :none, xaxis=("x1", (x1lim[1], x1lim[2])),
-            #        yaxis=("x2",(x2lim[1], x2lim[2])))
+            contour!(x1_range, x2_range, v, lw=3, linestyle=:dot, c=:red,
+                   levels=[0], colorbar = :none, xaxis=("c_a", (x1lim[1], x1lim[2])),
+                   yaxis=("c_r",(x2lim[1], x2lim[2])))
             # remove plt2 and replace with contour!
     end
 
 
     #Solve the model and plot the trajectories for any specified initial
     #conditions
-    plt1 = plot()
+    #plt1 = plot()
     #plt2 = plot()
 
     for i in xinit
         prob = ODEProblem(ODE_model!,i,t,model)
         #print(prob)
         sol = solve(prob)
-        #plt1 = plot(sol, vars=(1,2), lw=2, c=:black, legend = :none, xaxis=("x1",
-        #    (x1lim[1], x1lim[2])), yaxis=("x2",(x2lim[1], x2lim[2])))
+        plot!(sol, vars=(1,2), lw=2, c=:black, legend = :none, xaxis=("c_a",
+            (x1lim[1], x1lim[2])), yaxis=("c_r",(x2lim[1], x2lim[2])))
         #df = DataFrame(sol)
         #print(sol)
 
-        plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="a")
-        plot!(sol.t, sol[2,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="r")
+        #plt1 = plot(sol.t, sol[1,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="a")
+        #plot!(sol.t, sol[2,:], xaxis=("t"), yaxis=("c"), title="c vs t", label="r")
         #return sol
 
     end
 
     #Display and save the phase portrait
-    savefig(plt1, "./overall.png")
+    savefig(plt1, "./new.png")
     #savefig(plt2, "./2e2.png")
     display(plt1)
     #display(plt2)

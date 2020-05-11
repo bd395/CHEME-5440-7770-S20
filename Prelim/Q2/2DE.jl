@@ -23,7 +23,7 @@ function acdc!(du,u,p,t)
     n_xz = 2.0
     n_yz = 2.0
 
-    S = 0.01#p[1] #0.01, 10, 1e5 - values for 2D.
+    S = p[1] #0.01, 10, 1e5 - values for 2D.
 
     du[1] = (a_x + b_x*S)/(1 + S + (u[3]/z_x)^n_zx) - u[1]               #dx/dt
     du[2] = (a_y + b_y*S)/(1 + S + (u[1]/x_y)^n_xy) - delta_y*u[2]        #dy/dt
@@ -92,9 +92,9 @@ prob2_ea = ODEProblem(acdc!,u0, p = 8e3 ,tspan) # took S value from figue 2a #8e
 sol2_ea = solve(prob2_ea);
 append!(ss_ea, sol2_ea[length(sol2_ea)])
 
-S105ss = plot(sol2_ea[2:end], vars=(0,3), xaxis="t", yaxis=("Z",:log,(1e-3,10^-1)), title="Z @ SS, S = 105", legend=false)
-display(S105ss)
-savefig(S105ss, "S105ss.png")
+# S105ss = plot(sol2_ea, vars=(0,3), xaxis="t", yaxis="Z", title="Z @ SS, S = 105", legend=false) #:log,(1e-3,10^-1))
+# display(S105ss)
+# savefig(S105ss, "S105ss.png")
 
 cell1_u0a = ss_ea
 
@@ -115,4 +115,4 @@ sol2_cell3a = solve(prob2_cell3a);
 plot!(sol2_cell3a, vars=(0,[3]), label="Cell 3")
 
 display(cella)
-savefig(cella, "./new.png")
+savefig(cella, "./aboveHopf.png")

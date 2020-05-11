@@ -1,6 +1,6 @@
 ### Prelim Submission
 
-The Excel file ``Prelim_I.xlsx`` contains all answers, including graphs and qualitative responses
+The Excel file ``Prelim_I.xlsx`` contains all answers, including graphs and qualitative responses.
 
 
 

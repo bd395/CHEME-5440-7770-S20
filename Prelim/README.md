@@ -4,6 +4,10 @@ The Excel file ``Prelim_I.xlsx`` contains all answers, including graphs and qual
 
 
 
+https://tkf.github.io/Bifurcations.jl/dev/examples/calcium/
+
+
+
 ### Requirements
 
 The ``CheckBalances.jl`` script requires the ``CSV``, ``LinearAlgebra``, and ``DataFrames`` Julia packages.

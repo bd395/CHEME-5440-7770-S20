@@ -2,8 +2,9 @@
 
 The Excel file ``Prelim_I.xlsx`` contains all answers, including graphs and qualitative responses
 
-### Requirements
 
+
+### Requirements
 
 The ``CheckBalances.jl`` script requires the ``CSV``, ``LinearAlgebra``, and ``DataFrames`` Julia packages.
 

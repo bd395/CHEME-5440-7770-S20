@@ -35,6 +35,8 @@ using Bifurcations.BifurcationsBase: BifurcationProblem
 using Setfield: @lens
 
 param_axis = @lens _.s
+
+# change (0,2) to (0,10) in order to generate the zoomed out plot
 prob = BifurcationProblem(ode, param_axis, (0,2))
 
 using DiffEqBase: init, solve!
@@ -47,5 +49,5 @@ sol = solver.sol
 using Plots
 
 plt = plot(sol, yaxis="X")
-savefig(plt,"./new.png")
+#savefig(plt,"./2C_Bifurcation_zoomin.png.png")
 display(plt)

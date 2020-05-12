@@ -11,6 +11,7 @@ https://tkf.github.io/Bifurcations.jl/dev/examples/calcium/
 ### Requirements
 
 Pkg.add("insert package")
+For Bifurcations: Pkg add 
 
 ``DifferentialEquations``
 ``Plots``
@@ -18,7 +19,7 @@ Pkg.add("insert package")
 ``Parameters``
 ``DiffEqBase``
 ``StaticArrays``
-``Bifurcations`` ] add 
+``Bifurcations`` 
 ``Setfield``
 ``DiffEqBase``
 

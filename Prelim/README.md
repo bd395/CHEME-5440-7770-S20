@@ -10,7 +10,7 @@ Question 2 occupies the second tab. Accompanying Julia code is within the Q2 fol
 
 
 Part 2c
-- ``2C_bifurcationanalysis.jl`` - bifurcation model which developed the plots: 2C_bifurcationzoomin.png and 2C_bifurcationzoomout.png 
+- ``2C_bifurcationanalysis.jl`` - bifurcation model which developed the plots: 2C_bifurcationzoomin.png and 2C_bifurcationzoomout.png. Required packages shown below.
 
 
 Part 2d

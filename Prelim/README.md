@@ -30,7 +30,7 @@ Part 2f
 
 Pkg.add("``insert_package``")
 
-For ``Bifurcations``:  ] add https://github.com/tkf/Bifurcations.jl
+For ``Bifurcations``:  ] (enter package mode) add https://github.com/tkf/Bifurcations.jl
 
 ``DifferentialEquations``
 ``Plots``

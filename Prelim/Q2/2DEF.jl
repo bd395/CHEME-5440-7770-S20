@@ -53,7 +53,7 @@ tspan = (0.0,100.0)                     #start and end time
 ss_eb = zeros(0)
 
 #Signal = 0.1
-prob2_eb = ODEProblem(acdc!,u0, p = 1e-1 ,tspan) #took S value from figure 2a #8e-2
+prob2_eb = ODEProblem(acdc!,u0, p = 1e-1 ,tspan)
 sol2_eb = solve(prob2_eb);
 append!(ss_eb, sol2_eb[length(sol2_eb)])
 
@@ -79,7 +79,7 @@ sol2_cell3b = solve(prob2_cell3b);
 plot!(sol2_cell3b, vars=(0,[3]), label = "Cell 3")
 
 display(cellb)
-savefig(cellb, "./belowHopf.png")
+#savefig(cellb, "./2E_belowHopf.png")
 
 
 ## 2E. Steady-state above Hopf bifurcation point
@@ -111,7 +111,7 @@ sol2_cell3a = solve(prob2_cell3a);
 plot!(sol2_cell3a, vars=(0,[3]), label="Cell 3")
 
 display(cella)
-savefig(cella, "./aboveHopf.png")
+#savefig(cella, "./2E_aboveHopf.png")
 #savefig(cella, "./2F_S_105_100.png")
 
 ## 2F. Comparing S = 105 vs S = 100

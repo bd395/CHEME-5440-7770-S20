@@ -32,6 +32,8 @@ Pkg.add("``insert_package``")
 
 For ``Bifurcations``:  ] (enter pkg mode) add https://github.com/tkf/Bifurcations.jl
 
+Required packages: 
+
 ``DifferentialEquations``
 ``Plots``
 ``Parameters``

@@ -28,9 +28,9 @@ Part 2f
 
 ### Requirements
 
-Pkg.add("``insert package``")
+Pkg.add("``insert_package``")
 
-For ``Bifurcations``: ] add https://github.com/tkf/Bifurcations.jl
+For ``Bifurcations``:  ] add https://github.com/tkf/Bifurcations.jl
 
 ``DifferentialEquations``
 ``Plots``

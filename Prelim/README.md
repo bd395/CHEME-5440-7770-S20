@@ -4,7 +4,7 @@ The Excel file ``Prelim_I.xlsx`` contains all answers, including graphs and qual
 
 Question 1 is contained within the first tab.
 Accompanying Julia code (only used to calculate degradation constant) is within the Q1 folder.
-For specific calculation details please refer to the cell formulas which point to the intake values.
+Calculation formulas are within the cells themselves.
 
 Question 2 occupies the second tab. Accompanying Julia code is within the Q2 folder. The excel file mentions which script is used if any for each problem.
 

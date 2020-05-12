@@ -10,6 +10,18 @@ https://tkf.github.io/Bifurcations.jl/dev/examples/calcium/
 
 ### Requirements
 
+DifferentialEquations
+Plots
+
+Parameters
+DiffEqBase
+StaticArrays
+Bifurcations
+Setfield: @lens
+DiffEqBase: init, solve!
+
+
+
 The ``CheckBalances.jl`` script requires the ``CSV``, ``LinearAlgebra``, and ``DataFrames`` Julia packages.
 
 The ``Solve.jl`` solution script requires the ``GLPK`` package to the FBA problem. See [GLPK]

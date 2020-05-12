@@ -22,7 +22,7 @@ Part 2e
 
 
 Part 2f
-- ``2DEF.jl`` - intializes acdc! function for system of ODEs. 2F code section outputted plots: 2F_S_105_100.png, 2F_S_105ss.png. 
+- ``2DEF.jl`` - intializes acdc! function for system of ODEs. 2F code section outputted plots: 2F_S_105_100.png (line 123), 2F_S_105ss.png (line 115). 
 
 
 

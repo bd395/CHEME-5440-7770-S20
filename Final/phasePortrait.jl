@@ -76,8 +76,8 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
         prob = ODEProblem(ODE_model!,i,t,model)
         #print(prob)
         sol = solve(prob)
-        plot!(sol, vars=(1,2), lw=2, c=:black, legend = :none, xaxis=("N1",
-            (x1lim[1], x1lim[2])), yaxis=("N2",(x2lim[1], x2lim[2])))
+        plot!(sol, vars=(1,2), lw=2, c=:black, legend = :none, xaxis=("D1",
+            (x1lim[1], x1lim[2])), yaxis=("D2",(x2lim[1], x2lim[2])))
         #df = DataFrame(sol)
         #print(sol)
 
@@ -88,7 +88,7 @@ function phaseplot(model, x1lim, x2lim; clines=true, xinit=(), t=(0.0,50.0),
     end
 
     #Display and save the phase portrait
-    savefig(plt1, "./plot1b.png")
+    #savefig(plt1, "./plot1b.png")
     #savefig(plt2, "./2e2.png")
     display(plt1)
     #display(plt2)

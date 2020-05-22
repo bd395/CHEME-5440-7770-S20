@@ -3,8 +3,8 @@
 All derivations and qualitative answers are in ``Written_Work.pdf``. References to figures and julia codes are also mentioned in this document.
 
 #### Problem 1
-``Written_Work.pdf``
-``plot1b.jl`` (includes ``phasePortrait.jl``)
+``Written_Work.pdf`` <br />
+``plot1b.jl`` (includes ``phasePortrait.jl``) <br />
 ``plot1b.png``
 
 #### Problem 2

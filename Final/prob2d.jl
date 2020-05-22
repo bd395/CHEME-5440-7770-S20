@@ -36,7 +36,7 @@ display(plot2da)
 
 # intrinsic mitogenic signal generation
 # from notes
-signal = 100/27;
+signal = 100/27e-3;
 
 norm_rate = signal*Rt_s
 

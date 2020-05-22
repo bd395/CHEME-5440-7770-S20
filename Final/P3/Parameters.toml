@@ -21,12 +21,6 @@ value=3075
 units="nt"
 source="BIND:102070"
 
-[intercept_initiation_experiment]
-value=400.0
-units="sec"
-source="PMID:6160577"
-note="Use the lacZ value in Table 2"
-
 [slope_initiation_experiment]
 value=27.0
 units="muM/s"

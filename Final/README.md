@@ -14,7 +14,7 @@ All derivations and qualitative answers are in ``Written_Work.pdf``. References 
 
 #### Problem 3 (contained within ``P3`` folder)
 ``Written_Work.pdf`` <br />
-``Parameters.toml`` : Parameters file (units and source) <br />
+``Parameters.toml``: Parameters file (units and source) <br />
 ``prob3.ipynb`` (Julia Ipython) <br />
 ``plot3b.png`` <br />
 ``plot3c.png``
@@ -23,8 +23,4 @@ All derivations and qualitative answers are in ``Written_Work.pdf``. References 
 ``Written_Work.pdf`` <br />
 ``prob4.ipynb`` (Julia Ipython) <br />
 ``plot4c.png`` <br />
-``Data-3-5-AMP.txt`` : Data file
-
-
-
-Parameters used in the model simulation are specified in the ``Parameteres.toml`` file.
+``Data-3-5-AMP.txt``: Data file

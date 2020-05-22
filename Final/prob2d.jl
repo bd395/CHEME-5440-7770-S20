@@ -27,7 +27,7 @@ L = (q - kr*Rs_s)/(km/nc)
 
 Rt_s = Rs_s*Kss*L*Vs
 
-plot2d = plot(z,transpose(Rt_s), xaxis="z", yaxis="R⋆ Total", label=false, title="R⋆ Total vs z")
+plot2d = plot(z,transpose(Rt_s), xaxis="z (m)", yaxis="R⋆ Total", label=false, title="R⋆ Total vs z")
 
 savefig(plot2d, "./plot2d.png")
 

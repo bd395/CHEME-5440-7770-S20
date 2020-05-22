@@ -1,13 +1,4 @@
 # Holds biophysical constants, from literature -
-[mass_of_single_ecoli_cell]
-value=4.3e-13
-units="g"
-source="BIND:106437"
-
-[fraction_of_water_ecoli_cell]
-value=0.70
-units="fraction"
-source="BIND:100044"
 
 [average_RNAP_copy_number_ecoli_cell]
 value=4600
@@ -36,34 +27,66 @@ units="sec"
 source="PMID:6160577"
 note="Use the lacZ value in Table 2"
 
-[slope_initiation_exepriment]
+[slope_initiation_experiment]
 value=27.0
 units="muM/s"
 source="PMID:6160577"
 note="Adjusted starting from D promoter value to bring simulation in-line with data"
 
-[volume_of_ecoli_cell]
-value=1.1
-units="mum^3"
-source="BIND:100004"
 
 # Holds constants from the problem -
+[volume_of_ecoli_cell]
+value=1
+units="mum^3"
+source="Given by problem"
+
 [lacZ_copy_number]
 value=2
 units="copies per cell"
-source=""
+source="Given by problem (prelim 1)"
 
 [ecoli_doubling_time]
 value=40
 units="min"
-source=""
+source="Given by problem"
 
 [mRNA_half_life]
 value=5
 units="min"
-source=""
+source="Given by problem (prelim 1)"
 
 [gene_charateristic_length]
-value=1000
+value=999
 units="nt"
-source=""
+source="Given by problem"
+
+[fraction_of_water_ecoli_cell]
+value=0.70
+units="fraction"
+source="Given by problem"
+
+[mass_of_single_ecoli_cell]
+value=4.3e-13
+units="g"
+source="Given by problem"
+
+[translation_initiation_time]
+value=1.5
+units="s"
+source="Given by problem"
+
+[translation_saturation_constant]
+value=200
+units="uM"
+source="Given by problem"
+
+[K_p]
+value=1
+units="dimensionless"
+source="Given by problem"
+
+
+
+
+
+

@@ -14,7 +14,7 @@ All derivations and qualitative answers are in ``Written_Work.pdf``. References 
 
 #### Problem 3 (contained within ``P3`` folder)
 ``Written_Work.pdf`` <br />
-``Parameters.toml``: Parameters file (units and source) <br />
+``Parameters.toml``: Parameters file (units and source) - I wasn't able to install TOML properly so parameters are stored displayed here and hardcoded into the main file. <br />
 ``prob3.ipynb`` (Julia Ipython) <br />
 ``plot3b.png`` <br />
 ``plot3c.png``

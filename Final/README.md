@@ -4,18 +4,26 @@ All derivations and qualitative answers are in ``Written_Work.pdf``. References 
 
 #### Problem 1
 ``Written_Work.pdf`` <br />
-``plot1b.jl`` (includes ``phasePortrait.jl``) <br />
+``prob1b.jl`` (includes ``phasePortrait.jl``) <br />
 ``plot1b.png``
 
 #### Problem 2
-``Written_Work.pdf``
-``plot2d.jl``
+``Written_Work.pdf`` <br />
+``prob2d.jl`` <br />
 ``plot2db.png``
 
-#### Problem 3
+#### Problem 3 (contained within ``P3`` folder)
+``Written_Work.pdf`` <br />
+``Parameters.toml`` : Parameters file (units and source) <br />
+``prob3.ipynb`` (Julia Ipython) <br />
+``plot3b.png`` <br />
+``plot3c.png``
 
-#### Problem 4
-
+#### Problem 4 (contained within ``P4`` folder)
+``Written_Work.pdf`` <br />
+``prob4.ipynb`` (Julia Ipython) <br />
+``plot4c.png`` <br />
+``Data-3-5-AMP.txt`` : Data file
 
 
 
